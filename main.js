@@ -857,8 +857,7 @@ function openFont(event) {
     let reader = new FileReader();
     reader.onload = function() {
         font = opentype.parse(reader.result);
-        console.log(font);
-        console.log(reader.result);
+        console.log(font.glyphs.glyphs[4].path.commands);
         const bounds = font.getPath('H', 0, 0, 1).getBoundingBox();
         fontSize = 1 / (bounds.y2 - bounds.y1);
 
